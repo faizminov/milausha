@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@theme {
+  --font-sans: "Noto Sans", "Noto Sans Arabic", "Noto Sans SC", sans-serif;
+}
+
+/* Указываем Tailwind, где искать классы в файлах Vue */
+@source "./src/**/*.{vue,js,ts,jsx,tsx}";
+
