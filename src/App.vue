@@ -281,28 +281,30 @@ const selectLang = (code) => {
       class="mt-[70px] w-[1200px] mx-auto grid grid-cols-12 gap-x-[20px] py-10 items-start flex-1"
     >
       <!-- Заголовок с руками -->
+      <!-- Увеличили gap-16 и добавили tracking-[0.2em] для воздуха -->
       <div
-        class="col-span-12 flex items-center justify-center gap-16 mb-8 h-[80px]"
+        class="col-span-12 flex items-center justify-center gap-10 mb-4 h-[80px]"
       >
         <span
-          class="text-7xl transform -rotate-[45deg] -scale-x-100 animate-pulse drop-shadow-xl"
+          class="text-6xl transform -rotate-[45deg] -scale-x-100 animate-pulse drop-shadow-xl"
           >👉</span
         >
+
         <h1
-          class="text-4xl font-black uppercase text-center tracking-widest drop-shadow-2xl"
+          class="text-4xl font-semibold uppercase text-center tracking-[0.2em] drop-shadow-2xl text-white whitespace-nowrap"
         >
           {{ t.title }}
         </h1>
 
         <span
-          class="text-7xl transform rotate-[45deg] animate-pulse drop-shadow-xl"
+          class="text-6xl transform rotate-[45deg] animate-pulse drop-shadow-xl"
           >👉</span
         >
       </div>
 
       <!-- SideBar (2) -->
       <aside
-        class="col-span-2 h-[500px] bg-blue-600/60 rounded-3xl border-2 border-white/30 flex items-center justify-center shadow-2xl font-black uppercase italic"
+        class="col-span-2 h-[550px] bg-blue-600/40 rounded-3xl border-2 mt-0 border-white/30 flex items-center justify-center shadow-2xl font-black uppercase not italic font-normal"
       >
         {{ t.sidebar }}
       </aside>
@@ -318,14 +320,14 @@ const selectLang = (code) => {
 
       <!-- Card (2) -->
       <section
-        class="col-span-2 h-[600px] bg-blue-600/60 rounded-3xl border-2 border-white/30 flex items-center justify-center shadow-2xl font-black uppercase italic"
+        class="col-span-2 h-[560px] bg-blue-300/20 mt-0 rounded-3xl border-2 border-white/30 flex items-center justify-center shadow-2xl font-normal uppercase not italic"
       >
         <aside
-          class="col-span-2 h-[500px] bg-blue-600/40 rounded-3xl border-2 border-white/30 flex flex-col items-center p-6 backdrop-blur-sm shadow-xl"
+          class="col-span-2 h-[560px] bg-blue-600/40 rounded-3xl border-2 border-white/30 flex flex-col items-center px-1.5 py-4 backdrop-blur-sm shadow-xl"
         >
           <!-- ТВОЁ ФОТО (Теперь оно чуть ниже и крупнее) -->
           <div
-            class="w-24 h-24 rounded-full border-4 border-cyan-400 overflow-hidden mb-6 shadow-2xl shrink-0"
+            class="w-30 h-30 rounded-full border-4 border-cyan-400 overflow-hidden mb-6 shadow-2xl shrink-0"
           >
             <img
               src="/Я директор.jpg"
@@ -336,45 +338,42 @@ const selectLang = (code) => {
 
           <!-- ФОРМА ОБРАТНОЙ СВЯЗИ (Теперь у неё больше места) -->
           <form
-            class="w-full space-y-1.5 flex-1 flex flex-col justify-between px-1 pb-2"
+            class="w-full space-y-1.5 flex-1 flex flex-col justify-between px-0 pb-2"
           >
             <div class="space-y-1">
               <!-- ИМЯ: Хәтта оҙон исемдәр ҙә һыйырлыҡ итеп text-xs яһайбыҙ -->
               <input
                 type="text"
                 :placeholder="t.name"
-                required
-                class="w-full bg-cyan-300/40 px-3 py-1.5 rounded-none border border-white/30 text-[11px] font-normal text-cyan-950 placeholder:text-cyan-800/60 outline-none focus:bg-cyan-200/60 transition-all"
+                class="w-full bg-cyan-100/30 px-0.5 py-1.0 rounded-none border border-white/30 text-[10px] not-italic font-normal text-cyan-950"
               />
+              <!-- Традицион 'italic' класы булмаҫҡа тейеш! -->
 
-              <!-- EMAIL -->
               <input
                 type="email"
                 :placeholder="t.email"
                 required
-                class="w-full bg-cyan-300/40 px-3 py-1.5 rounded-none border border-white/30 text-[11px] font-normal text-cyan-950 placeholder:text-cyan-800/60 outline-none focus:bg-cyan-200/60 transition-all"
+                class="w-full bg-cyan-100/30 px-0.5 py-1.0 rounded-none border border-white/30 text-[10px] not-italic font-normal text-cyan-950 placeholder:text-cyan-800/60 outline-none focus:bg-cyan-200/60 transition-all"
               />
-
-              <!-- ТЕЛЕФОН -->
               <input
                 type="tel"
                 :placeholder="t.phone"
-                required
-                class="w-full bg-cyan-300/40 px-3 py-1.5 rounded-none border border-white/30 text-[11px] font-normal text-cyan-950 placeholder:text-cyan-800/60 outline-none focus:bg-cyan-200/60 transition-all"
+                class="w-full bg-cyan-100/30 px-0.5 py-1.0 rounded-none border border-white/30 text-[10px] not-italic font-normal text-cyan-950"
               />
+              <!-- Традицион 'italic' класы булмаҫҡа тейеш! -->
 
               <!-- СООБЩЕНИЕ: Бейеклеген h-28-гә тиклем арттырҙыҡ һәм шрифтын бәләкәйләттек -->
               <textarea
-                maxlength="250"
+                maxlength="500"
                 :placeholder="t.msg"
-                class="w-full bg-cyan-300/40 px-3 py-2 rounded-none border border-white/30 text-[11px] font-normal text-cyan-950 placeholder:text-cyan-800/60 h-28 resize-none outline-none focus:bg-cyan-200/60 transition-all leading-tight"
+                class="w-full bg-cyan-100/30 px-0.5 py-1.0 rounded-none border border-white/30 text-[10px] not-italic font-normal text-cyan-950 placeholder:text-cyan-800/60 h-50 resize-none outline-none focus:bg-cyan-200/60 transition-all leading-tight"
               ></textarea>
             </div>
 
             <!-- КНОПКА: Тексты бер аҙ бәләкәйерәк, әммә асыҡ -->
             <button
               type="submit"
-              class="w-full bg-cyan-300 hover:bg-cyan-200 text-cyan-900 font-black py-2.5 rounded-2xl text-[10px] transition-all shadow-lg active:scale-95 uppercase tracking-[0.2em] border border-white/40 mt-1"
+              class="w-full bg-cyan-500 hover:bg-cyan-200 text-white-900 not-italic font-normal py-1.0 rounded-2xl text-[10px] transition-all shadow-lg active:scale-95 uppercase tracking-[0.2em] border border-black/40 mt-0.1"
             >
               {{ t.send }}
             </button>
@@ -387,12 +386,12 @@ const selectLang = (code) => {
         class="col-span-12 mt-5 p-12 bg-white/20 backdrop-blur-xl rounded-[50px] border-2 border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.2)] relative z-10"
       >
         <h2
-          class="text-4xl font-black mb-6 uppercase italic text-blue-900 tracking-tighter drop-shadow-sm"
+          class="text-4xl font-black mb-6 uppercase not italic font-normal text-blue-900 tracking-tighter drop-shadow-sm"
         >
           Description Area
         </h2>
         <div
-          class="h-[250px] w-full border-4 border-dashed border-blue-800/20 rounded-[30px] flex items-center justify-center font-black text-blue-900/30 text-3xl uppercase italic"
+          class="h-[250px] w-full border-4 border-dashed border-blue-800/20 rounded-[30px] flex items-center justify-center font-normal text-blue-900/30 text-3xl not italic font-normal"
         >
           12 Columns Content Layer
         </div>
@@ -402,7 +401,7 @@ const selectLang = (code) => {
     <!-- 5. ФУТЕР (Непрозрачность 40%, 12 колонок) -->
     <footer
       id="footer"
-      class="w-full bg-black/40 py-12 mt-20 border-t border-white/10 flex justify-center"
+      class="w-full bg-gray/40 py-12 mt-20 border-t border-white/10 flex justify-center"
     >
       <div
         class="w-[1200px] grid grid-cols-12 gap-x-[20px] px-4 text-[11px] font-black uppercase tracking-[0.5em] text-white/50"
@@ -416,6 +415,17 @@ const selectLang = (code) => {
 </template>
 
 <style scoped>
+/* Бөтә проект өсөн курсивты тыйыу */
+* {
+  font-style: normal !important;
+}
+
+/* Inter шрифты 400 (Regular) булыуын нығытыу */
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
 .animate-fade-in {
   animation: fadeIn 1.2s ease-out;
 }
