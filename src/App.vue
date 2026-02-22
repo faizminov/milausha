@@ -48,8 +48,8 @@ const translations = {
     phone: "ТЕЛЕФОН",
     msg: "ОҘАТЫУ ХАТЫ",
     send: "ЕБӘРЕРГӘ",
-    h: "КОД ЯҘЫУ",
-    c: "СТИЛЬДАР",
+    h: "ҠОРОЛМА",
+    c: "СТИЛЬДӘР",
     j: "ЛОГИКА",
     t: "ТИПТАР",
     v: "ҮҘӘК",
@@ -59,20 +59,147 @@ const translations = {
     vs: "РЕДАКТОР",
     skills: "ОҪТАЛЫҠ",
   },
-  EN: { title: "EXACTLY WHAT YOU NEED", sidebar: "MAKE AN ORDER", card: "USER CARD", name: "YOUR NAME", email: "YOUR EMAIL", phone: "PHONE", msg: "COVER LETTER", send: "SEND NOW", h: "LAYOUT", c: "STYLING", j: "LOGIC", t: "TYPES", v: "CORE", vt: "BUNDLING", b: "GRID", f: "DESIGN", vs: "EDITOR", skills: "MY STACK" },
-
-  ZH: { title: "正是你需要的", sidebar: "下订单", card: "用户卡", name: "你的名字", email: "你的电子邮件", phone: "电话", msg: "求职信", send: "立即发送", h: "布局", c: "样式", j: "逻辑", t: "类型", v: "核心", vt: "打包", b: "网格", f: "设计", vs: "编辑器", skills: "我的技术栈" },
-
-  AR: { title: "بالظبط ما تحتاجه", sidebar: "قدم طلبك", card: "بطاقة المستخدم", name: "اسمك", email: "بريدك الإلكتروني", phone: "رقم الهاتف", msg: "خطاب تغطية", send: "أرسل الآن", h: "تخطيط", c: "تنسيق", j: "منطق", t: "أنواع", v: "نواة", vt: "تجميع", b: "شبكة", f: "تصميم", vs: "محرر", skills: "تقنياتي" },
-
-  TR: { title: "TAM İHTİYACINIZ OLAN ŞEY", sidebar: "SİPARİŞ VER", card: "KART", name: "ADINIZ", email: "E-POSTA", phone: "TELEFON", msg: "ÖN YAZI", send: "ŞİMDİ GÖNDER", h: "DÜZEN", c: "STİLLER", j: "MANTIK", t: "TİPLER", v: "ÇEKİRDEK", vt: "DERLEME", b: "IZGARA", f: "TASARIM", vs: "EDİTÖR", skills: "YETENEKLERİM" },
-
-  JA: { title: "まさにあなたが必要としているもの", sidebar: "今すぐ注文", card: "カード", name: "お名前", email: "メール", phone: "電話番号", msg: "添え状", send: "今すぐ送信", h: "レイアウト", c: "スタイル", j: "ロジック", t: "型定義", v: "コア", vt: "ビルド", b: "グリッド", f: "デザイン", vs: "エディタ", skills: "スキル" },
-
-  KO: { title: "당신에게 꼭 필요한 것", sidebar: "주문하기", card: "사용자 카드", name: "이름", email: "이메일", phone: "전화번호", msg: "자기소개서", send: "지금 보내기", h: "레이아웃", c: "스타일", j: "로직", t: "타입", v: "코어", vt: "빌드", b: "그리드", f: "디자인", vs: "편집기", skills: "기술 스택" },
-
-  HI: { title: "बिल्कुल वही जो आपको चाहिए", sidebar: "ऑर्डर करें", card: "यूज़र कार्ड", name: "आपका नाम", email: "ईमेल", phone: "फ़ोन", msg: "कवर लेटर", send: "अभी भेजें", h: "लेआउट", c: "स्टाइल", j: "लॉजिक", t: "टाइप्स", v: "कोर", vt: "बंडलिंग", b: "ग्रिड", f: "डिज़ाइन", vs: "एडिटर", skills: "मेरा स्टैक" }
-
+  EN: {
+    title: "EXACTLY WHAT YOU NEED",
+    sidebar: "MAKE AN ORDER",
+    card: "USER CARD",
+    name: "YOUR NAME",
+    email: "YOUR EMAIL",
+    phone: "PHONE",
+    msg: "COVER LETTER",
+    send: "SEND NOW",
+    h: "LAYOUT",
+    c: "STYLING",
+    j: "LOGIC",
+    t: "TYPES",
+    v: "CORE",
+    vt: "BUNDLING",
+    b: "GRID",
+    f: "DESIGN",
+    vs: "EDITOR",
+    skills: "MY STACK",
+  },
+  ZH: {
+    title: "正是你需要的",
+    sidebar: "下订单",
+    card: "用户卡",
+    name: "你的名字",
+    email: "你的电子邮件",
+    phone: "电话",
+    msg: "求职信",
+    send: "立即发送",
+    h: "布局",
+    c: "样式",
+    j: "逻辑",
+    t: "类型",
+    v: "核心",
+    vt: "打包",
+    b: "网格",
+    f: "设计",
+    vs: "编辑器",
+    skills: "我的技术栈",
+  },
+  AR: {
+    title: "بالظبط ما تحتاجه",
+    sidebar: "قدم طلبك",
+    card: "بطاقة المستخدم",
+    name: "اسمك",
+    email: "بريدك الإلكتروني",
+    phone: "رقم الهاتف",
+    msg: "خطاب تغطية",
+    send: "أرسل الآن",
+    h: "تخطيط",
+    c: "تنسيق",
+    j: "منطق",
+    t: "أنواع",
+    v: "نواة",
+    vt: "تجميع",
+    b: "شبكة",
+    f: "تصميم",
+    vs: "محرر",
+    skills: "تقنياتي",
+  },
+  TR: {
+    title: "TAM İHTİYACINIZ OLAN ŞEY",
+    sidebar: "SİPARİŞ VER",
+    card: "KART",
+    name: "ADINIZ",
+    email: "E-POSTA",
+    phone: "TELEFON",
+    msg: "ÖN YAZI",
+    send: "ŞİМДİ GÖNDER",
+    h: "DÜZEN",
+    c: "STİLLER",
+    j: "MANTIK",
+    t: "TİPLER",
+    v: "ÇEKİRDEK",
+    vt: "DERLEME",
+    b: "IZGARA",
+    f: "TASARIM",
+    vs: "EDİTÖR",
+    skills: "YETENEKLERİM",
+  },
+  JA: {
+    title: "まさにあなたが必要としているもの",
+    sidebar: "今すぐ注文",
+    card: "カード",
+    name: "お名前",
+    email: "メール",
+    phone: "電話番号",
+    msg: "添え状",
+    send: "今すぐ送信",
+    h: "レイアウト",
+    c: "スタイル",
+    j: "ロジック",
+    t: "型定義",
+    v: "コア",
+    vt: "ビルド",
+    b: "グリッド",
+    f: "デザイン",
+    vs: "エディタ",
+    skills: "スキル",
+  },
+  KO: {
+    title: "당신에게 꼭 필요한 것",
+    sidebar: "주문하기",
+    card: "사용자 카드",
+    name: "이름",
+    email: "이메일",
+    phone: "전화번호",
+    msg: "자기소개서",
+    send: "지금 보내기",
+    h: "레이아웃",
+    c: "스타일",
+    j: "로직",
+    t: "타입",
+    v: "코어",
+    vt: "빌드",
+    b: "그리드",
+    f: "디자인",
+    vs: "편집기",
+    skills: "기술 스택",
+  },
+  HI: {
+    title: "बिल्कुल वही जो आपको चाहिए",
+    sidebar: "ऑर्डर करें",
+    card: "यूज़र कार्ड",
+    name: "आपका नाम",
+    email: "ईमेल",
+    phone: "फ़ोन",
+    msg: "कवर लेटर",
+    send: "अभी भेजें",
+    h: "लेआउट",
+    c: "स्टाइल",
+    j: "लॉजिक",
+    t: "टाइप्स",
+    v: "कोर",
+    vt: "बंडलिंग",
+    b: "ग्रिड",
+    f: "डिज़ाइन",
+    vs: "एडिटर",
+    skills: "मेरा स्टैक",
+  },
+};
 
 // 3. И только в самом конце создаем "переводчик" t
 const t = computed(() => translations[currentLang.value]);
@@ -162,10 +289,11 @@ const selectLang = (code) => {
           >👉</span
         >
         <h1
-          class="text-4xl font-black uppercase tracking-tighter text-center drop-shadow-2xl"
+          class="text-4xl font-black uppercase text-center tracking-widest drop-shadow-2xl"
         >
           {{ t.title }}
         </h1>
+
         <span
           class="text-7xl transform rotate-[45deg] animate-pulse drop-shadow-xl"
           >👉</span
@@ -207,37 +335,46 @@ const selectLang = (code) => {
           </div>
 
           <!-- ФОРМА ОБРАТНОЙ СВЯЗИ (Теперь у неё больше места) -->
-          <form class="w-full space-y-3 flex-1 flex flex-col justify-center">
-            <input
-              type="text"
-              :placeholder="t.name"
-              required
-              class="w-full bg-black/30 p-2 rounded-xl border border-white/10 text-[10px] outline-none focus:border-cyan-400 uppercase transition-all"
-            />
+          <form
+            class="w-full space-y-1.5 flex-1 flex flex-col justify-between px-1 pb-2"
+          >
+            <div class="space-y-1">
+              <!-- ИМЯ: Хәтта оҙон исемдәр ҙә һыйырлыҡ итеп text-xs яһайбыҙ -->
+              <input
+                type="text"
+                :placeholder="t.name"
+                required
+                class="w-full bg-cyan-300/40 px-3 py-1.5 rounded-none border border-white/30 text-[11px] font-normal text-cyan-950 placeholder:text-cyan-800/60 outline-none focus:bg-cyan-200/60 transition-all"
+              />
 
-            <input
-              type="email"
-              :placeholder="t.email"
-              required
-              class="w-full bg-black/30 p-2 rounded-xl border border-white/10 text-[10px] outline-none focus:border-cyan-400 uppercase transition-all"
-            />
+              <!-- EMAIL -->
+              <input
+                type="email"
+                :placeholder="t.email"
+                required
+                class="w-full bg-cyan-300/40 px-3 py-1.5 rounded-none border border-white/30 text-[11px] font-normal text-cyan-950 placeholder:text-cyan-800/60 outline-none focus:bg-cyan-200/60 transition-all"
+              />
 
-            <input
-              type="tel"
-              :placeholder="t.phone"
-              required
-              class="w-full bg-black/30 p-2 rounded-xl border border-white/10 text-[10px] resize-none outline-none focus:border-cyan-400 uppercase transition-all"
-            />
-            <textarea
-              maxlength="250"
-              :placeholder="t.msg"
-              class="w-full bg-black/30 p-2 rounded-xl border border-white/10 text-[10px] h-24 resize-none outline-none focus:border-cyan-400 uppercase transition-all"
-            >
-            </textarea>
+              <!-- ТЕЛЕФОН -->
+              <input
+                type="tel"
+                :placeholder="t.phone"
+                required
+                class="w-full bg-cyan-300/40 px-3 py-1.5 rounded-none border border-white/30 text-[11px] font-normal text-cyan-950 placeholder:text-cyan-800/60 outline-none focus:bg-cyan-200/60 transition-all"
+              />
 
+              <!-- СООБЩЕНИЕ: Бейеклеген h-28-гә тиклем арттырҙыҡ һәм шрифтын бәләкәйләттек -->
+              <textarea
+                maxlength="250"
+                :placeholder="t.msg"
+                class="w-full bg-cyan-300/40 px-3 py-2 rounded-none border border-white/30 text-[11px] font-normal text-cyan-950 placeholder:text-cyan-800/60 h-28 resize-none outline-none focus:bg-cyan-200/60 transition-all leading-tight"
+              ></textarea>
+            </div>
+
+            <!-- КНОПКА: Тексты бер аҙ бәләкәйерәк, әммә асыҡ -->
             <button
               type="submit"
-              class="w-full bg-cyan-500 hover:bg-cyan-400 text-white font-black py-3 rounded-2xl text-[11px] transition-all shadow-lg active:scale-95 uppercase mt-2"
+              class="w-full bg-cyan-300 hover:bg-cyan-200 text-cyan-900 font-black py-2.5 rounded-2xl text-[10px] transition-all shadow-lg active:scale-95 uppercase tracking-[0.2em] border border-white/40 mt-1"
             >
               {{ t.send }}
             </button>
