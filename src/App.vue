@@ -8,53 +8,71 @@ const languages = [
   { name: "English", code: "EN", dir: "ltr" },
   { name: "中文", code: "ZH", dir: "ltr" },
   { name: "العربية", code: "AR", dir: "rtl" },
-  { name: "Türkçe", code: "TR", dir: "ltr" },
-  { name: "日本語", code: "JA", dir: "ltr" },
+  { name: "Türkçe", code: "TR", dir: "ltr" }, // Турецкий
+  { name: "日本語", code: "JA", dir: "ltr" }, // Японский
+  { name: "한국어", code: "KO", dir: "ltr" }, // Корейский
+  { name: "हिन्दी", code: "HI", dir: "ltr" }, // Хинди (Индия)
 ];
 
-const currentLang = ref("RU");
+const currentLang = ref("EN");
 const isLangOpen = ref(false);
 
 // 2. Затем создаем словарь (добавил 'card' во все языки)
 const translations = {
   RU: {
     title: "ИМЕННО ТО, ЧТО ТЕБЕ НУЖНО",
-    sidebar: "МЕНЮ",
+    sidebar: "СДЕЛАЙ ЗАКАЗ",
     card: "КАРТОЧКА",
+    name: "ВАШЕ ИМЯ",
+    email: "ВАША ПОЧТА",
+    phone: "ТЕЛЕФОН",
+    msg: "СОПРОВОДИТЕЛЬНОЕ ПИСЬМО",
     send: "ОТПРАВИТЬ",
+    h: "ВЕРСТКА",
+    c: "СТИЛИ",
+    j: "ЛОГИКА",
+    t: "ТИПЫ",
+    v: "ЯДРО",
+    vt: "СБОРКА",
+    b: "СЕТКА",
+    f: "МАКЕТ",
+    vs: "КОД",
+    skills: "МОЙ СТЕК",
   },
   BA: {
     title: "НӘҠ ҺИҢӘ КӘРӘКЛЕ НӘМӘ",
-    sidebar: "МЕНЮ",
+    sidebar: "ЗАКАЗ БИРЕГЕҘ",
     card: "КАРТОЧКА",
+    name: "ИСЕМЕГЕҘ",
+    email: "ЭЛЕКТРОН ПОЧТАҒЫҘ",
+    phone: "ТЕЛЕФОН",
+    msg: "ОҘАТЫУ ХАТЫ",
     send: "ЕБӘРЕРГӘ",
+    h: "КОД ЯҘЫУ",
+    c: "СТИЛЬДАР",
+    j: "ЛОГИКА",
+    t: "ТИПТАР",
+    v: "ҮҘӘК",
+    vt: "ЙЫЙЫУ",
+    b: "СЕТКА",
+    f: "ДИЗАЙН",
+    vs: "РЕДАКТОР",
+    skills: "ОҪТАЛЫҠ",
   },
-  EN: {
-    title: "EXACTLY WHAT YOU NEED",
-    sidebar: "MENU",
-    card: "USER CARD",
-    send: "SEND",
-  },
-  ZH: { title: "正是你需要的", sidebar: "菜单", card: "用户卡", send: "发送" },
-  AR: {
-    title: "بالظبط ما تحتاجه",
-    sidebar: "قائمة",
-    card: "بطاقة المستخدم",
-    send: "إرسال",
-  },
-  TR: {
-    title: "TAM İHTİYACINIZ OLAN ŞEY",
-    sidebar: "MENÜ",
-    card: "KART",
-    send: "GÖNDER",
-  },
-  JA: {
-    title: "まさにあなたが必要としているもの",
-    sidebar: "メニュー",
-    card: "カード",
-    send: "送信",
-  },
-};
+  EN: { title: "EXACTLY WHAT YOU NEED", sidebar: "MAKE AN ORDER", card: "USER CARD", name: "YOUR NAME", email: "YOUR EMAIL", phone: "PHONE", msg: "COVER LETTER", send: "SEND NOW", h: "LAYOUT", c: "STYLING", j: "LOGIC", t: "TYPES", v: "CORE", vt: "BUNDLING", b: "GRID", f: "DESIGN", vs: "EDITOR", skills: "MY STACK" },
+
+  ZH: { title: "正是你需要的", sidebar: "下订单", card: "用户卡", name: "你的名字", email: "你的电子邮件", phone: "电话", msg: "求职信", send: "立即发送", h: "布局", c: "样式", j: "逻辑", t: "类型", v: "核心", vt: "打包", b: "网格", f: "设计", vs: "编辑器", skills: "我的技术栈" },
+
+  AR: { title: "بالظبط ما تحتاجه", sidebar: "قدم طلبك", card: "بطاقة المستخدم", name: "اسمك", email: "بريدك الإلكتروني", phone: "رقم الهاتف", msg: "خطاب تغطية", send: "أرسل الآن", h: "تخطيط", c: "تنسيق", j: "منطق", t: "أنواع", v: "نواة", vt: "تجميع", b: "شبكة", f: "تصميم", vs: "محرر", skills: "تقنياتي" },
+
+  TR: { title: "TAM İHTİYACINIZ OLAN ŞEY", sidebar: "SİPARİŞ VER", card: "KART", name: "ADINIZ", email: "E-POSTA", phone: "TELEFON", msg: "ÖN YAZI", send: "ŞİMDİ GÖNDER", h: "DÜZEN", c: "STİLLER", j: "MANTIK", t: "TİPLER", v: "ÇEKİRDEK", vt: "DERLEME", b: "IZGARA", f: "TASARIM", vs: "EDİTÖR", skills: "YETENEKLERİM" },
+
+  JA: { title: "まさにあなたが必要としているもの", sidebar: "今すぐ注文", card: "カード", name: "お名前", email: "メール", phone: "電話番号", msg: "添え状", send: "今すぐ送信", h: "レイアウト", c: "スタイル", j: "ロジック", t: "型定義", v: "コア", vt: "ビルド", b: "グリッド", f: "デザイン", vs: "エディタ", skills: "スキル" },
+
+  KO: { title: "당신에게 꼭 필요한 것", sidebar: "주문하기", card: "사용자 카드", name: "이름", email: "이메일", phone: "전화번호", msg: "자기소개서", send: "지금 보내기", h: "레이아웃", c: "스타일", j: "로직", t: "타입", v: "코어", vt: "빌드", b: "그리드", f: "디자인", vs: "편집기", skills: "기술 스택" },
+
+  HI: { title: "बिल्कुल वही जो आपको चाहिए", sidebar: "ऑर्डर करें", card: "यूज़र कार्ड", name: "आपका नाम", email: "ईमेल", phone: "फ़ोन", msg: "कवर लेटर", send: "अभी भेजें", h: "लेआउट", c: "स्टाइल", j: "लॉजिक", t: "टाइप्स", v: "कोर", vt: "बंडलिंग", b: "ग्रिड", f: "डिज़ाइन", vs: "एडिटर", skills: "मेरा स्टैक" }
+
 
 // 3. И только в самом конце создаем "переводчик" t
 const t = computed(() => translations[currentLang.value]);
@@ -156,7 +174,7 @@ const selectLang = (code) => {
 
       <!-- SideBar (2) -->
       <aside
-        class="col-span-2 h-[400px] bg-blue-600/60 rounded-3xl border-2 border-white/30 flex items-center justify-center shadow-2xl font-black uppercase italic"
+        class="col-span-2 h-[500px] bg-blue-600/60 rounded-3xl border-2 border-white/30 flex items-center justify-center shadow-2xl font-black uppercase italic"
       >
         {{ t.sidebar }}
       </aside>
@@ -172,14 +190,64 @@ const selectLang = (code) => {
 
       <!-- Card (2) -->
       <section
-        class="col-span-2 h-[400px] bg-blue-600/60 rounded-3xl border-2 border-white/30 flex items-center justify-center shadow-2xl font-black uppercase italic"
+        class="col-span-2 h-[600px] bg-blue-600/60 rounded-3xl border-2 border-white/30 flex items-center justify-center shadow-2xl font-black uppercase italic"
       >
-        {{ t.card }}
+        <aside
+          class="col-span-2 h-[500px] bg-blue-600/40 rounded-3xl border-2 border-white/30 flex flex-col items-center p-6 backdrop-blur-sm shadow-xl"
+        >
+          <!-- ТВОЁ ФОТО (Теперь оно чуть ниже и крупнее) -->
+          <div
+            class="w-24 h-24 rounded-full border-4 border-cyan-400 overflow-hidden mb-6 shadow-2xl shrink-0"
+          >
+            <img
+              src="/Я директор.jpg"
+              alt="My Photo"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- ФОРМА ОБРАТНОЙ СВЯЗИ (Теперь у неё больше места) -->
+          <form class="w-full space-y-3 flex-1 flex flex-col justify-center">
+            <input
+              type="text"
+              :placeholder="t.name"
+              required
+              class="w-full bg-black/30 p-2 rounded-xl border border-white/10 text-[10px] outline-none focus:border-cyan-400 uppercase transition-all"
+            />
+
+            <input
+              type="email"
+              :placeholder="t.email"
+              required
+              class="w-full bg-black/30 p-2 rounded-xl border border-white/10 text-[10px] outline-none focus:border-cyan-400 uppercase transition-all"
+            />
+
+            <input
+              type="tel"
+              :placeholder="t.phone"
+              required
+              class="w-full bg-black/30 p-2 rounded-xl border border-white/10 text-[10px] resize-none outline-none focus:border-cyan-400 uppercase transition-all"
+            />
+            <textarea
+              maxlength="250"
+              :placeholder="t.msg"
+              class="w-full bg-black/30 p-2 rounded-xl border border-white/10 text-[10px] h-24 resize-none outline-none focus:border-cyan-400 uppercase transition-all"
+            >
+            </textarea>
+
+            <button
+              type="submit"
+              class="w-full bg-cyan-500 hover:bg-cyan-400 text-white font-black py-3 rounded-2xl text-[11px] transition-all shadow-lg active:scale-95 uppercase mt-2"
+            >
+              {{ t.send }}
+            </button>
+          </form>
+        </aside>
       </section>
 
       <!-- 4. ОПИСАНИЕ (Вытащено наверх, z-10) -->
       <div
-        class="col-span-12 mt-16 p-12 bg-white/20 backdrop-blur-xl rounded-[50px] border-2 border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.2)] relative z-10"
+        class="col-span-12 mt-5 p-12 bg-white/20 backdrop-blur-xl rounded-[50px] border-2 border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.2)] relative z-10"
       >
         <h2
           class="text-4xl font-black mb-6 uppercase italic text-blue-900 tracking-tighter drop-shadow-sm"
