@@ -291,7 +291,7 @@ const selectLang = (code) => {
         >
 
         <h1
-          class="text-4xl font-semibold uppercase text-center tracking-[0.2em] drop-shadow-2xl text-white whitespace-nowrap"
+          class="animate-shimmer-pulse bg-[linear-gradient(90deg,#fff,#3b82f6,#ff0080,#fff)] bg-[length:200%_auto] bg-clip-text text-transparent text-4xl font-semibold uppercase text-center tracking-[0.2em] drop-shadow-2xl whitespace-nowrap"
         >
           {{ t.title }}
         </h1>
@@ -307,6 +307,14 @@ const selectLang = (code) => {
         class="col-span-2 h-[550px] bg-blue-600/40 rounded-3xl border-2 mt-0 border-white/30 flex items-center justify-center shadow-2xl font-black uppercase not italic font-normal"
       >
         {{ t.sidebar }}
+        <div
+          class="group cursor-pointer p-4 border-l-4 border-transparent hover:border-cyan-400 hover:bg-white/10 transition-all duration-300"
+        >
+          <!-- Заголовок ссылки -->
+          <h3 class="text-xl font-bold text-white group-hover:text-cyan-300">
+            1. High-Speed Performance
+          </h3>
+        </div>
       </aside>
 
       <!-- Центральная область на 8 колонок -->
@@ -393,6 +401,23 @@ const selectLang = (code) => {
         <div
           class="h-[250px] w-full border-4 border-dashed border-blue-800/20 rounded-[30px] flex items-center justify-center font-normal text-blue-900/30 text-3xl not italic font-normal"
         >
+          <!-- Контейнер услуги -->
+          <div
+            class="group cursor-pointer p-4 border-l-4 border-transparent hover:border-cyan-400 hover:bg-white/10 transition-all duration-300"
+          >
+            <!-- Заголовок ссылки -->
+            <h3 class="text-xl font-bold text-white group-hover:text-cyan-300">
+              1. High-Speed Performance
+            </h3>
+
+            <!-- Описание (p1), которое можно скрывать/показывать -->
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed opacity-90">
+              Built with
+              <span class="text-emerald-400 font-mono">Vue 3 + Vite</span> for
+              lightning-fast loading and instant interaction.
+            </p>
+          </div>
+
           12 Columns Content Layer
         </div>
       </div>
@@ -437,6 +462,30 @@ body {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* Добавляем настройки анимации прямо здесь */
+@theme {
+  --animate-shimmer-pulse:
+    shimmer 3s infinite linear, pulse-size 2s infinite ease-in-out;
+
+  @keyframes shimmer {
+    from {
+      background-position: 0% 50%;
+    }
+    to {
+      background-position: 200% 50%;
+    }
+  }
+  @keyframes pulse-size {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
   }
 }
 /* Скрываем стандартный скроллбар, но оставляем возможность прокрутки */
