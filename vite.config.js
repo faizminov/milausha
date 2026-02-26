@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite' // <-- Обязательно доб
 
 // https://vite.dev
 export default defineConfig({
+  base: '/milausha/' , 
   plugins: [
     vue(),
     tailwindcss(), // <-- И это включит магию Tailwind

@@ -212,9 +212,7 @@ const selectLang = (code) => {
 
 <template>
   <!-- Главный контейнер (цвет aqua #00ffff) -->
-  <div
-    class="min-h-screen bg-[#00ffff] flex flex-col font-sans text-white overflow-x-hidden"
-  >
+  <div class="min-h-screen bg-[#00ffff] flex flex-col font-sans text-white overflow-x-hidden">
     <!-- 1. HEADER (40px, 12 колонок) -->
     <header
       class="fixed top-0 w-full h-[40px] bg-black/20 backdrop-blur-md border-b border-white/20 z-50 flex justify-center"
@@ -253,7 +251,7 @@ const selectLang = (code) => {
 
     <!-- 2. ЛЕНТА ЯЗЫКОВ (30px, 12 колонок) -->
     <div
-      class="fixed top-[40px] w-full h-[30px] bg-white/10 backdrop-blur-sm border-b border-black/10 z-50 flex justify-center"
+      class="fixed top-[40px] w-full h-[30px] bg-black/10 backdrop-blur-sm border-b border-black/10 z-50 flex justify-center"
     >
       <div class="w-[1200px] grid grid-cols-12 gap-x-[20px] px-4 items-center">
         <div
@@ -277,149 +275,90 @@ const selectLang = (code) => {
     </div>
 
     <!-- 3. ОСНОВНОЙ КОНТЕНТ (mt-[70px]) -->
-    <main
-      class="mt-[70px] w-[1200px] mx-auto grid grid-cols-12 gap-x-[20px] py-10 items-start flex-1"
-    >
-      <!-- Заголовок с руками -->
-      <!-- Увеличили gap-16 и добавили tracking-[0.2em] для воздуха -->
-      <div
-        class="col-span-12 flex items-center justify-center gap-10 mb-4 h-[80px]"
-      >
-        <span
-          class="text-6xl transform -rotate-[45deg] -scale-x-100 animate-pulse drop-shadow-xl"
-          >👉</span
-        >
+    <main class="mt-[70px] w-[1200px] mx-auto grid grid-cols-12 gap-x-[20px] py-10 items-start flex-1">
+      
+      <!-- ГЛАВНЫЙ КОНТЕЙНЕР (На всю ширину экрана) -->
+      <div class="w-full min-h-screen bg-[#00ffff] flex flex-col items-center overflow-x-hidden">
 
-        <h1
-          class="animate-shimmer-pulse bg-[linear-gradient(90deg,#fff,#3b82f6,#ff0080,#fff)] bg-[length:200%_auto] bg-clip-text text-transparent text-4xl font-semibold uppercase text-center tracking-[0.2em] drop-shadow-2xl whitespace-nowrap"
-        >
-          {{ t.title }}
-        </h1>
+        <!-- МАРТОВСКОЕ НЕБО (Фрейм с анимацией) -->
+        <div class="relative w-full min-h-[500px] flex flex-col items-center justify-center 
+              bg-gradient-to-b from-[#020617] via-[#1e293b] to-[#fb923c]/20 py-16 px-4 overflow-hidden">
+    
+        <!-- СЛОИ ФОНА (Сияние, Венера, Самолет) -->
+        <div class="absolute inset-0 opacity-30 blur-[100px] pointer-events-none">
+        <div class="absolute top-0 left-[-20%] w-[140%] h-full bg-emerald-500/10 skew-y-12"></div>
+        </div>
+    
+        <!-- Венера (Сулпан Йондоҙо) -->
+        <div class="absolute top-12 right-[15%] w-3 h-3 bg-white rounded-full 
+                shadow-[0_0_25px_8px_white] animate-twinkle"></div>
+    
+        <!-- След самолета -->
+        <div div class="absolute top-1/3 -left-full w-full h-[1.5px] bg-white/40 
+                rotate-[-8deg] animate-plane-trail shadow-[0_0_12px_white]"></div>
 
-        <span
-          class="text-6xl transform rotate-[45deg] animate-pulse drop-shadow-xl"
-          >👉</span
-        >
-      </div>
-
-      <!-- SideBar (2) -->
-      <aside
-        class="col-span-2 h-[550px] bg-blue-600/40 rounded-3xl border-2 mt-0 border-white/30 flex items-center justify-center shadow-2xl font-black uppercase not italic font-normal"
-      >
+        <!-- ЦЕНТРАЛЬНАЯ ГРУППА: Руки + Заголовок -->
+        <div class="relative z-10 flex flex-wrap items-center justify-center gap-6 md:gap-16 w-full max-w-7xl">
+          <span class="text-6xl md:text-9xl animate-bounce-slow drop-shadow-[0_0_15px_white]">👉</span>
+      
+          <h1 class="text-3xl md:text-6xl font-black uppercase text-center tracking-[0.3em] 
+                 text-white drop-shadow-[0_10px_25px_black] leading-tight max-w-[800px]">
+        {{ t.title }}
+          </h1>
+      
+          <span class="text-6xl md:text-9xl animate-bounce-slow drop-shadow-[0_0_15px_white]">👈</span>
+        </div>
+    
+        <!-- Заря (свет снизу) -->
+        <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-orange-400/20 via-transparent to-transparent"></div>
+        </div>
+        <!-- SideBar (1) -->
+        <aside class="col-span-2 h-[550px] bg-blue-600/40 rounded-3xl border-2 mt-0 border-white/30 flex items-center justify-center shadow-2xl font-black uppercase not italic font-normal">
         {{ t.sidebar }}
-        <div
-          class="group cursor-pointer p-4 border-l-4 border-transparent hover:border-cyan-400 hover:bg-white/10 transition-all duration-300"
-        >
+        <div class="group cursor-pointer p-4 border-l-4 border-transparent hover:border-cyan-400 hover:bg-red/10 transition-all duration-300">
           <!-- Заголовок ссылки -->
           <h3 class="text-xl font-bold text-white group-hover:text-cyan-300">
             1. High-Speed Performance
           </h3>
         </div>
-      </aside>
-
-      <!-- Центральная область на 8 колонок -->
-      <div class="col-span-8 flex items-center justify-center p-4">
+        </aside>
+       <!-- Центральная область на 8 колонок -->
+        <!-- <div class="col-span-8 flex items-center justify-center p-4">
         <img
           src="/maket.jpg"
           alt="Devices"
           class="w-full h-auto object-contain mix-blend-multiply drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-transform hover:scale-105 duration-500"
         />
+      </div> -->
+
+        <!-- ОСНОВНОЙ КОНТЕНТ (Фото + Описание) -->
+        < class="w-full max-w-[1200px] px-6 py-12 flex flex-col md:flex-row items-center md:items-start gap-12">
+    
+        <!-- КАРТОЧКА С ФОТО -->
+        <div class="w-full md:w-1/3 flex flex-col items-center">
+      <div class="w-64 h-80 rounded-3xl border-4 border-white/30 overflow-hidden shadow-2xl">
+        <!-- Твое фото -->
+        <img src="/Я директор.jpg" alt="Miniahmet Faizov" class="w-full h-full object-cover" />
       </div>
-
-      <!-- Card (2) -->
-      <section
-        class="col-span-2 h-[560px] bg-blue-300/20 mt-0 rounded-3xl border-2 border-white/30 flex items-center justify-center shadow-2xl font-normal uppercase not italic"
-      >
-        <aside
-          class="col-span-2 h-[560px] bg-blue-600/40 rounded-3xl border-2 border-white/30 flex flex-col items-center px-1.5 py-4 backdrop-blur-sm shadow-xl"
-        >
-          <!-- ТВОЁ ФОТО (Теперь оно чуть ниже и крупнее) -->
-          <div
-            class="w-30 h-30 rounded-full border-4 border-cyan-400 overflow-hidden mb-6 shadow-2xl shrink-0"
-          >
-            <img
-              src="/Я директор.jpg"
-              alt="My Photo"
-              class="w-full h-full object-cover"
-            />
-          </div>
-
-          <!-- ФОРМА ОБРАТНОЙ СВЯЗИ (Теперь у неё больше места) -->
-          <form
-            class="w-full space-y-1.5 flex-1 flex flex-col justify-between px-0 pb-2"
-          >
-            <div class="space-y-1">
-              <!-- ИМЯ: Хәтта оҙон исемдәр ҙә һыйырлыҡ итеп text-xs яһайбыҙ -->
-              <input
-                type="text"
-                :placeholder="t.name"
-                class="w-full bg-cyan-100/30 px-0.5 py-1.0 rounded-none border border-white/30 text-[10px] not-italic font-normal text-cyan-950"
-              />
-              <!-- Традицион 'italic' класы булмаҫҡа тейеш! -->
-
-              <input
-                type="email"
-                :placeholder="t.email"
-                required
-                class="w-full bg-cyan-100/30 px-0.5 py-1.0 rounded-none border border-white/30 text-[10px] not-italic font-normal text-cyan-950 placeholder:text-cyan-800/60 outline-none focus:bg-cyan-200/60 transition-all"
-              />
-              <input
-                type="tel"
-                :placeholder="t.phone"
-                class="w-full bg-cyan-100/30 px-0.5 py-1.0 rounded-none border border-white/30 text-[10px] not-italic font-normal text-cyan-950"
-              />
-              <!-- Традицион 'italic' класы булмаҫҡа тейеш! -->
-
-              <!-- СООБЩЕНИЕ: Бейеклеген h-28-гә тиклем арттырҙыҡ һәм шрифтын бәләкәйләттек -->
-              <textarea
-                maxlength="500"
-                :placeholder="t.msg"
-                class="w-full bg-cyan-100/30 px-0.5 py-1.0 rounded-none border border-white/30 text-[10px] not-italic font-normal text-cyan-950 placeholder:text-cyan-800/60 h-50 resize-none outline-none focus:bg-cyan-200/60 transition-all leading-tight"
-              ></textarea>
-            </div>
-
-            <!-- КНОПКА: Тексты бер аҙ бәләкәйерәк, әммә асыҡ -->
-            <button
-              type="submit"
-              class="w-full bg-cyan-500 hover:bg-cyan-200 text-white-900 not-italic font-normal py-1.0 rounded-2xl text-[10px] transition-all shadow-lg active:scale-95 uppercase tracking-[0.2em] border border-black/40 mt-0.1"
-            >
-              {{ t.send }}
-            </button>
-          </form>
-        </aside>
-      </section>
-
-      <!-- 4. ОПИСАНИЕ (Вытащено наверх, z-10) -->
-      <div
-        class="col-span-12 mt-5 p-12 bg-white/20 backdrop-blur-xl rounded-[50px] border-2 border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.2)] relative z-10"
-      >
-        <h2
-          class="text-4xl font-black mb-6 uppercase not italic font-normal text-blue-900 tracking-tighter drop-shadow-sm"
-        >
-          Description Area
-        </h2>
-        <div
-          class="h-[250px] w-full border-4 border-dashed border-blue-800/20 rounded-[30px] flex items-center justify-center font-normal text-blue-900/30 text-3xl not italic font-normal"
-        >
-          <!-- Контейнер услуги -->
-          <div
-            class="group cursor-pointer p-4 border-l-4 border-transparent hover:border-cyan-400 hover:bg-white/10 transition-all duration-300"
-          >
-            <!-- Заголовок ссылки -->
-            <h3 class="text-xl font-bold text-white group-hover:text-cyan-300">
-              1. High-Speed Performance
-            </h3>
-
-            <!-- Описание (p1), которое можно скрывать/показывать -->
-            <p class="mt-2 text-sm text-slate-300 leading-relaxed opacity-90">
-              Built with
-              <span class="text-emerald-400 font-mono">Vue 3 + Vite</span> for
-              lightning-fast loading and instant interaction.
-            </p>
-          </div>
-
-          12 Columns Content Layer
+      <div class="mt-4 text-center">
+        <h2 class="text-2xl font-bold text-gray-800 uppercase tracking-widest">Miniahmet Faizov</h2>
+        <p class="text-gray-600 font-medium">Webdesigner Frontend Developer</p>
+      </div>
         </div>
+
+        <!-- БЛОК ОПИСАНИЯ -->
+        <div class="w-full md:w-2/3 bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+      <h3 class="text-3xl font-black text-gray-900 mb-6 uppercase tracking-wider">About Me</h3>
+      <p class="text-gray-800 text-xl leading-relaxed">
+        Привет! Я создаю современные веб-приложения на Vue 3 и Tailwind CSS. 
+        Моя цель — делать сайты, которые не просто работают, а вызывают восторг. 
+        В этом проекте я объединил техническую мощь и магию мартовского неба.
+      </p>
+      <!-- Сюда можешь дописать свой текст -->
+        </div>
+
+  
+
       </div>
     </main>
 
@@ -512,4 +451,35 @@ body {
 html {
   scroll-behavior: smooth;
 }
+/* Мерцание Венеры */
+/* Мерцание Венеры */
+@keyframes twinkle {
+  0%, 100% { transform: scale(1); opacity: 1; filter: brightness(1.2); }
+  50% { transform: scale(0.8); opacity: 0.6; filter: brightness(0.8); }
+}
+
+/* Полёт самолёта */
+@keyframes plane-trail {
+  0% { transform: translateX(0) rotate(-8deg); }
+  100% { transform: translateX(300%) rotate(-8deg); }
+}
+
+/* Плавное парение рук */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-twinkle { 
+  animation: twinkle 4s infinite ease-in-out; 
+}
+
+.animate-plane-trail { 
+  animation: plane-trail 18s linear infinite; 
+}
+
+.animate-bounce-slow { 
+  animation: bounce-slow 5s infinite ease-in-out; 
+}
 </style>
+
